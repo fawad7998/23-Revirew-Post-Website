@@ -42,38 +42,38 @@ function App() {
     document.getElementById("letter-limit").innerText = "Letter: 0";
   };
 
-  const handlePublish = (index) => {
-    const review = reviews[index];
-    const publishedReview = (
-      <div key={index} className="userReview w-1/3 m-6 bg-green-200 h-[300px]">
-        <div className="review-info">
-          <div className="flex flex-col items-center justify-between space-y-48">
-            <p className="h-[40px] w-full bg-green-200 outline-none px-4 ">
-              {review.text}
-            </p>
-            <div className="extra-info flex w-full justify-between px-8 p-4">
-              <h1 id="letter-limit" className="bg-green-400 py-1 px-5 rounded text-sm">
-                Letter: {review.text.length}
-              </h1>
-              <h1 id="Review Date" className="bg-green-400 py-1 px-5 rounded text-sm">
-                {review.date}
-              </h1>
-              <button
-                id="delete"
-                className="bg-green-400 rounded py-1 px-3 text-sm"
-                onClick={() => handleDelete(index)}
-              >
-                Delete
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
+  // const handlePublish = (index) => {
+  //   const review = reviews[index];
+  //   const publishedReview = (
+  //     <div key={index} className="userReview w-1/3 m-6 bg-green-200 h-[300px]">
+  //       <div className="review-info">
+  //         <div className="flex flex-col items-center justify-between space-y-48">
+  //           <p className="h-[40px] w-full bg-green-200 outline-none px-4 ">
+  //             {review.text}
+  //           </p>
+  //           <div className="extra-info flex w-full justify-between px-8 p-4">
+  //             <h1 id="letter-limit" className="bg-green-400 py-1 px-5 rounded text-sm">
+  //               Letter: {review.text.length}
+  //             </h1>
+  //             <h1 id="Review Date" className="bg-green-400 py-1 px-5 rounded text-sm">
+  //               {review.date}
+  //             </h1>
+  //             <button
+  //               id="delete"
+  //               className="bg-green-400 rounded py-1 px-3 text-sm"
+  //               onClick={() => handleDelete(index)}
+  //             >
+  //               Delete
+  //             </button>
+  //           </div>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   );
 
-    setReviews(reviews.filter((_, i) => i !== index));
-    document.getElementById("published-reviews").appendChild(publishedReview);
-  };
+  //   setReviews(reviews.filter((_, i) => i !== index));
+  //   document.getElementById("published-reviews").appendChild(publishedReview);
+  // };
 
   const handleDelete = (index) => {
     setReviews(reviews.filter((_, i) => i !== index));
